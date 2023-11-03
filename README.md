@@ -15,8 +15,8 @@ In the dataset, the target class, ‘HeartDisease’ is a binary class. In this 
 #### Data explanation and characterization
 I obtained the dataset from Kaggle, and it was originally created using a combination of preexisting data from different cities and countries. The dataset was filtered to remove duplicate entries resulting in the final data having 918 instances, 11 descriptive features, and 1 target feature [2]. There are seven categorical features, six are continuous features, and one is the target variable.  
  
-##### TABLE I. DATA QUALITY REPORT FOR CATEGORICAL FEATURES
- ![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/7721597d-cc2a-47fe-8e8f-41976f4255d1)
+###### TABLE I. DATA QUALITY REPORT FOR CATEGORICAL FEATURES
+<img src="https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/7721597d-cc2a-47fe-8e8f-41976f4255d1" width="850" height="300">
 
 Sex represents the gender of the patient. This feature takes F or M values, F for female and M for male, making the cardinality of this feature two. The mode of the Sex feature is M with a frequency of 725 which means that males occupy around 79% of the dataset. 
 ChestPainType feature gives the type of chest pain, which can be TA meaning Typical Angina, ATA meaning Atypical Angina, NAP meaning Non-Anginal Pain, or ASY meaning Asymptomatic. Angina is defined as a “type of chest pain caused by reduced blood flow to the heart” [3]. Typical angina is usually preceded by physical exertion or stress and is relieved with rest or medication. Atypical angina is described as having symptoms that are ascribed to angina but don’t fall under the category of typical angina [4]. Non-Anginal Pain refers to pain in the chest area that is not related to the heart [5]. Asymptomatic is when there are no symptoms being shown. Thus, ChestPainType has a cardinality of four since its domain is TA, ATA, NAP, and ASY. ASY chest pain type is the most frequent value, where 54% of the patients have asymptomatic chest pain. This signifies the importance of performing statistical data analysis on the dataset.
@@ -26,8 +26,8 @@ ExerciseAngina refers to whether angina was induced by exercise or not. Exercise
 ST_Slope is the ST segment's slope which measures the segment's shift “relative to exercise-induced increments in heart rate” [9]. It can be up-sloping, flat, or down-sloping. Therefore, the feature has a cardinality of three: up, flat, and down. Half of the dataset had a flat slope during peak exercise. 
 Finally, the target feature is titled ‘HeartDisease’ and is a Boolean with a domain of 1 and 0, 1 being the patient has heart disease, and 0 being the patient does not have heart disease. HeartDisease has a cardinality of two, with 44.6% of the patients have heart disease. This indicates that there is a balanced distribution between patients who have been diagnosed with the disease and those who have not, thereby ensuring a representative sample for the study.
 
-##### TABLE II. DATA QUALITY REPORT FOR CONTINUOUS FEATURES
-![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/664246ee-44d2-4087-ab1f-750ff4ff98b4)
+###### TABLE II. DATA QUALITY REPORT FOR CONTINUOUS FEATURES
+<img src="https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/664246ee-44d2-4087-ab1f-750ff4ff98b4" width="850" height="300">
  
 
 Age represents the age of the patients, and its values range from 28 to 77, with a mean of 53.5.
@@ -38,13 +38,13 @@ Finally, oldpeak is the measure of ST depression induced by exercise relative to
 
 #### Data Visualization
 
-##### Fig. 1. Bar Plots of Categorical Features
-![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/70142f28-369d-4d76-be3a-96e02032ba99)
+###### Fig. 1. Bar Plots of Categorical Features
+<img src="https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/70142f28-369d-4d76-be3a-96e02032ba99" width="1500" height="750">
 
 As shown in fig. 1, the bar plot for the Sex feature shows that the number of males is almost four times the number of females in the dataset. The ASY (Asymptomatic) chest pain type is the most prevalent type of chest pain at almost 400 instances, while TA (Typical Angina) scores the lowest at a level lower than 100. The number of instances where fasting blood pressure is less than or equal to 120 mg/dl is 3.5 times more than the number of instances where fasting blood pressure is greater than 120 mg/dl. Additionally, the number of instances with Normal resting ECG is larger than the number of instances of LVH, which shows probable or definite left ventricular hypertrophy by Estes’ criteria, and ST which shows the patient is having wave abnormality with elevation or depression of more than 0.05 mV. This means that there might be people with heart disease that have normal resting ECG. As for ExerciseAngina, the number of cases with ‘No’ Exercise Angina is around 375, which is higher than the number of cases of Exercise Angina. Instances with flat ST_Slope, zero slope, are the largest number of instances compared to upward or downward slopes. Finally, the number of instances of heart disease is slightly higher than instances of no heart disease with a difference of 100 instances.
  
-##### Fig. 2. Histograms of Continuous Features
-![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/f300b30a-6a5d-4dea-8cc8-2cf17cc0c361)
+###### Fig. 2. Histograms of Continuous Features
+<img src="https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/f300b30a-6a5d-4dea-8cc8-2cf17cc0c361" width="1500" height="750">
 
 In fig. 2, the histogram of the Age feature shows a unimodal normal distribution. On the other hand, RestingBP follows a unimodal right-skewed distribution, which will require normalization before applying any machine learning model. Also, 350 instances fall around 125 mm/Hg RestingBP. As for the Cholesterol feature, there are 175 instances with 0 to 50 mm/dl cholesterol levels which shows the presence of outliers in the feature. The rest of the data has a right-skewed unimodal distribution with up to 600 mm/dl cholesterol levels, reflecting large outlier values. For the MaxHR feature, it follows a multimodal distribution with two peaks at 120 and 140, with 120 instances at each peak. The Oldpeak feature follows a unimodal right-skewed distribution with the highest concentration being at 0.
 
@@ -57,8 +57,9 @@ I conducted a visualization of the data to identify features that have the stron
 
  
 
-![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/b5978bfc-e2f6-4f6d-aefe-d231af517846)
-Fig. 3. Correlation with Target Class
+<img src="https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/b5978bfc-e2f6-4f6d-aefe-d231af517846" width="1500" height="750">
+
+###### Fig. 3. Correlation with Target Class
 
 I split the dataset into training and testing, with a training set size of 80% and test set size 20%. To ensure that all implemented models would always produce the same results. Throughout any data splits, I set the random_state parameter to a fixed integer value of 42 to fix the random seed for the random number generator. This ensures that the results of the models are reproducible and consistent across multiple runs. I used the training set to apply feature selection methods. Using k-fold cross validation with 5 folds, I applied a backward selection method Recursive Feature Elimination (RFE) with a decision tree estimator. Based on the RFE rankings, the top 10 features are ST_Slope_Up, Cholesterol, MaxHR, Age, Oldpeak, ChestPainType_ASY, RestingBP, Sex, ExerciseAngina, and FastingBS. To verify the results of RFE, I implemented another feature selection method called SelectKBest with Chi squared. This method is a filter method that selects the top K features based on the Chi-squared test statistic between each feature and the target variable. With SelectKBest, the top 10 features are Sex, FastingBS, MaxHR, ExerciseAngina, ChestPainType_ASY, ChestPainType_ATA, ChestPainType_NAP, ST_Slope_Down, ST_Slope_Flat, and ST_Slope_Up. The results are consistent between both feature selection methods with some variations. For instance, Cholesterol and Oldpeak were only picked by RFE, while all ST_Slope levels are ranked high in SelectKBest. Therefore, I chose 11 features instead of 10 to create the dataset with the selected features. The selected features are Age, Sex, FastingBS, MaxHR, ExerciseAngina, Oldpeak, ChestPainType_ASY, ChestPainType_ATA, RestingECG_Normal, ST_Slope_Flat, and ST_Slope_Up. 
 	
@@ -83,18 +84,21 @@ In this experiment, I also used stratified k-fold cross validation with five fol
 ### Results and Performance Analysis
 
 ![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/bf7321f4-f35c-4eb6-9fc0-e68eeb7cb069) 
-Fig. 4. SVC ROC Curve is based on a test set in the 1st experiment.
+###### Fig. 4. SVC ROC Curve is based on a test set in the 1st experiment.
+
 
 In figure 4, the AUC of SVM when run on test data is significantly large, which indicates a good performing model overall. 
 
 ![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/42f83fd7-e2d6-4652-8d0c-b9df47a61e13)
-Fig. 5. DT ROC Curve is based on a test set in the 1st experiment.
+###### Fig. 5. DT ROC Curve is based on a test set in the 1st experiment.
+
 
 In figure 5, the AUC of DT in the first experiment depicts a perfect model; however, such result is an indication of overfitting. This could be due to using the DT estimator in the initial feature selection step, where the model already picked the most informative features.
 
 
 ![image](https://github.com/Haninrefai/Heart-Disease-Prediction/assets/89818668/6b0a338c-4149-40ba-a31c-de70c7b73a41) 
-Fig. 6. SVM ROC Curve is based on a test set in the 3rd experiment.
+###### Fig. 6. SVM ROC Curve is based on a test set in the 3rd experiment.
+
 
 In figure 6, the AUC of SVM in the third experiment in which there were no feature selection performed on the dataset is 0.94 which is higher than that of feature selected dataset. This may mean that I could have introduced some bias by manually selecting the 11 features of the df_Ml dataset.
 
@@ -105,17 +109,27 @@ It is also significant that higher performance models with higher accuracy and A
 Based on the experiments conducted, the optimized SVM model had the highest performance with an optimal sensitivity value of 0.9. Therefore, I recommend deploying this model on the dataset for further use. However, to improve sensitivity further, I suggest experimenting with the optimized SVM model on the dataset with reduced dimensionality after applying PCA and the dataset without any feature selection or reduced dimensionality. This experimentation will help ensure that the model is not overfitting and will allow for a more robust evaluation of model performance.
 
 ### References
-World Health Organization. World Health Organization. Cardiovascular Diseases (CVDs). https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds). Accessed April 27, 2023.
-Fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved March 15, 2023, from https://www.kaggle.com/fedesoriano/heart-failure-prediction.
-Mayo Clinic. (2022, March 30). Angina - Symptoms and Causes. Retrieved April 25, 2023, from https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373
-AlBadri, A., Leong, D., Bairey Merz, C. N., Wei, J., Handberg, E. M., Shufelt, C. L., Mehta, P. K., Nelson, M. D., Thomson, L. E., Berman, D. S., Shaw, L. J., Cook‐Wiens, G., & Pepine, C. J. (2017). Typical angina is associated with greater coronary endothelial dysfunction but not abnormal vasodilatory reserve. Clinical Cardiology, 40(10), 886–891. Retrieved April 25, 2023, from https://doi.org/10.1002/clc.22740 
-CDC. (2019, May 15). Diabetes Testing. Centers for Disease Control and Prevention. Retrieved April 25, 2023, from https://www.cdc.gov/diabetes/basics/getting-tested.html#:~:text=Fasting%20Blood%20Sugar%20Test 
-Centre (UK), N. G. (2016). Resting electrocardiography. National Library of Medicine; National Institute for Health and Care Excellence (UK). Retrieved April 25, 2023, from https://www.ncbi.nlm.nih.gov/books/NBK367910/ 
-Kashou, A. H., & Kashou, H. E. (2019). Rhythm, ST Segment. StatPearls Publishing. National Library of Medicine. https://www.ncbi.nlm.nih.gov/books/NBK459364/
-Non-Cardiac Chest Pain. (n.d.). Cleveland Clinic. Retrieved April 25, 2023, from https://my.clevelandclinic.org/health/diseases/15851-gerd-non-cardiac-chest-pain 
-Finkelhor, R. S., Newhouse, K. E., Vrobel, T. R., Miron, S. D., & Bahler, R. C. (1986). The ST segment/heart rate slope as a predictor of coronary artery disease: comparison with quantitative thallium imaging and conventional ST segment criteria. American Heart Journal, 112(2), 296–304. Retrieved April 25, 2023, from https://doi.org/10.1016/0002-8703(86)90265-6
-Heart UK. (2022). Understanding your cholesterol test results. Heart UK The Cholesterol Charity. Retrieved April 25, 2023, from https://www.heartuk.org.uk/cholesterol/understanding-your-cholesterol-test-results- 
-Scikit Learn Machine Learning in Python. (n.d.). Extra Trees Classifier. Retrieved March 31, 2023, from https://scikit-learn.org/stable/index.html.
+[1] World Health Organization. World Health Organization. Cardiovascular Diseases (CVDs). https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds). Accessed April 27, 2023.
+
+[2] Fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved March 15, 2023, from https://www.kaggle.com/fedesoriano/heart-failure-prediction.
+
+[3] Mayo Clinic. (2022, March 30). Angina - Symptoms and Causes. Retrieved April 25, 2023, from https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373
+
+[4] AlBadri, A., Leong, D., Bairey Merz, C. N., Wei, J., Handberg, E. M., Shufelt, C. L., Mehta, P. K., Nelson, M. D., Thomson, L. E., Berman, D. S., Shaw, L. J., Cook‐Wiens, G., & Pepine, C. J. (2017). Typical angina is associated with greater coronary endothelial dysfunction but not abnormal vasodilatory reserve. Clinical Cardiology, 40(10), 886–891. Retrieved April 25, 2023, from https://doi.org/10.1002/clc.22740 
+
+[5] CDC. (2019, May 15). Diabetes Testing. Centers for Disease Control and Prevention. Retrieved April 25, 2023, from https://www.cdc.gov/diabetes/basics/getting-tested.html#:~:text=Fasting%20Blood%20Sugar%20Test 
+
+[6] Centre (UK), N. G. (2016). Resting electrocardiography. National Library of Medicine; National Institute for Health and Care Excellence (UK). Retrieved April 25, 2023, from https://www.ncbi.nlm.nih.gov/books/NBK367910/ 
+
+[7] Kashou, A. H., & Kashou, H. E. (2019). Rhythm, ST Segment. StatPearls Publishing. National Library of Medicine. https://www.ncbi.nlm.nih.gov/books/NBK459364/
+
+[8] Non-Cardiac Chest Pain. (n.d.). Cleveland Clinic. Retrieved April 25, 2023, from https://my.clevelandclinic.org/health/diseases/15851-gerd-non-cardiac-chest-pain 
+
+[9] Finkelhor, R. S., Newhouse, K. E., Vrobel, T. R., Miron, S. D., & Bahler, R. C. (1986). The ST segment/heart rate slope as a predictor of coronary artery disease: comparison with quantitative thallium imaging and conventional ST segment criteria. American Heart Journal, 112(2), 296–304. Retrieved April 25, 2023, from https://doi.org/10.1016/0002-8703(86)90265-6
+
+[10] Heart UK. (2022). Understanding your cholesterol test results. Heart UK The Cholesterol Charity. Retrieved April 25, 2023, from https://www.heartuk.org.uk/cholesterol/understanding-your-cholesterol-test-results- 
+
+[11] Scikit Learn Machine Learning in Python. (n.d.). Extra Trees Classifier. Retrieved March 31, 2023, from https://scikit-learn.org/stable/index.html.
 
  
 
